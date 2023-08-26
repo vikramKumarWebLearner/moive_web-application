@@ -84,7 +84,7 @@ const Header = () => {
                         className="menuItem"
                         onClick={() => navigationHandler("movie")}
                     >
-                        Movies
+                        VkpMovie
                     </li>
                     <li
                         className="menuItem"
