@@ -19,7 +19,7 @@ const People = () => {
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/trending/person/day`).then(
+        fetchDataFromApi(`/trending/person/day?language=en-US&page=${pageNum}`).then(
             (res) => {
                 setData(res);
                 setPageNum((prev) => prev + 1);
@@ -31,7 +31,7 @@ const People = () => {
     };
     // person/day?language=en-US
     const fetchNextPageData = () => {
-        fetchDataFromApi(`/trending/person/day`).then(
+        fetchDataFromApi(`/trending/person/day?language=en-US&page=${pageNum}`).then(
             (res) => {
                 if (data?.results) {
                     setData({
@@ -46,7 +46,7 @@ const People = () => {
             }
         );
     };
-
+    console.log(data);
     useEffect(() => {
         setPageNum(1);
         fetchInitialData();
